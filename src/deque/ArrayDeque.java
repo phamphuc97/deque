@@ -82,7 +82,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     /** Removes and returns the item at the front of the deque */
     public T removeFirst() {
         if (size == 0) {
-            return null;
+            throw new RuntimeException("There is no element to remove");
         }
         if (items.length >= 16 && size == 0.25 * items.length) {
             resize(items.length / 2);
@@ -105,7 +105,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     /** Removes and returns the item at the back of the deque */
     public T removeLast() {
         if (size == 0) {
-            return null;
+            throw new RuntimeException("There is no element to remove");
         }
         if (items.length >= 16 && size == 0.25 * items.length) {
             resize(items.length / 2);

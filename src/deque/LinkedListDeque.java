@@ -61,7 +61,7 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
     /** Removes and returns the item at the front of the deque */
     public T removeFirst() {
         if (size == 0) {
-            return null;
+            throw new RuntimeException("There is no element to remove");
         }
         T removedItem = sentinel.next.item;
         sentinel.next = sentinel.next.next;
@@ -74,7 +74,7 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
     /** Removes and returns the item at the back of the deque */
     public T removeLast() {
         if (size == 0) {
-            return null;
+            throw new RuntimeException("There is no element to remove");
         }
         T removedItem = sentinel.prev.item;
         sentinel.prev = sentinel.prev.prev;
@@ -127,17 +127,17 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
      */
 
     /** Returns whether or not the parameter o is equal to the Deque */
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object other) {
+        if (this == other) {
             return true;
         }
-        if (o == null) {
+        if (other == null) {
             return false;
         }
-        if (o instanceof Deque && (this.size() == ((Deque<?>) o).size())) {
-            Deque<T> other = (Deque<T>) o;
+        if (other instanceof Deque && (this.size() == ((Deque<?>) other).size())) {
+            Deque<T> otherDeque = (Deque<T>) other;
             for (int i = 0; i < size; i++) {
-                if (!other.get(i).equals(this.get(i))) {
+                if (!otherDeque.get(i).equals(this.get(i))) {
                     return false;
                 }
             }
