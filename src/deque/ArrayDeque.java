@@ -128,7 +128,7 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     /** Get the item at the given index */
     public T get(int index) {
         if (index < 0 || index >= size) {
-            return null;
+            throw new RuntimeException("Index out of bounds!");
         } else {
             return items[(index + nextFirst + 1) % items.length];
         }

@@ -16,60 +16,60 @@ public class LinkedListDequeTest {
      *
      * && is the "and" operation. */
     public void aDequeWith3ItemsShouldHaveSize3() {
-        LinkedListDeque<String> lld1 = new LinkedListDeque<String>();
+        LinkedListDeque<String> stringDeque = new LinkedListDeque<String>();
 
-        assertTrue("A newly initialized LLDeque should be empty", lld1.isEmpty());
-        lld1.addFirst("front");
+        assertTrue("A newly initialized LLDeque should be empty", stringDeque.isEmpty());
+        stringDeque.addFirst("front");
 
         // The && operator is the same as "and" in Python.
         // It's a binary operator that returns true if both arguments true, and false otherwise.
-        assertEquals(1, lld1.size());
-        assertFalse("lld1 should now contain 1 item", lld1.isEmpty());
+        assertEquals(1, stringDeque.size());
+        assertFalse("stringDeque should now contain 1 item", stringDeque.isEmpty());
 
-        lld1.addLast("middle");
-        assertEquals(2, lld1.size());
+        stringDeque.addLast("middle");
+        assertEquals(2, stringDeque.size());
 
-        lld1.addLast("back");
-        assertEquals(3, lld1.size());
+        stringDeque.addLast("back");
+        assertEquals(3, stringDeque.size());
     }
 
     @Test
     /** Adds an item, then removes an item, and ensures that dll is empty afterwards. */
     public void aDequeShouldBeEmptyAfterAddingAndRemovingAnItem() {
-        LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
+        LinkedListDeque<Integer> intDeque = new LinkedListDeque<Integer>();
         // should be empty
-        assertTrue("lld1 should be empty upon initialization", lld1.isEmpty());
+        assertTrue("intDeque should be empty upon initialization", intDeque.isEmpty());
 
-        lld1.addFirst(10);
+        intDeque.addFirst(10);
         // should not be empty
-        assertFalse("lld1 should contain 1 item", lld1.isEmpty());
+        assertFalse("intDeque should contain 1 item", intDeque.isEmpty());
 
-        lld1.removeFirst();
+        intDeque.removeFirst();
         // should be empty
-        assertTrue("lld1 should be empty after removal", lld1.isEmpty());
+        assertTrue("intDeque should be empty after removal", intDeque.isEmpty());
     }
 
     @Test
     /* check if null is return when removing from an empty LinkedListDeque. */
     public void removingEmptyDequeResultsARuntimeException() {
-        LinkedListDeque<Integer> int_deque = new LinkedListDeque<Integer>();
+        LinkedListDeque<Integer> intDeque = new LinkedListDeque<Integer>();
 
         assertThrows(RuntimeException.class, () -> {
-            int_deque.removeFirst();
+            intDeque.removeFirst();
         });
         assertThrows(RuntimeException.class, () -> {
-            int_deque.removeLast();
+            intDeque.removeLast();
         });
     }
 
     @Test
     /* Test the getRecursive method */
     public void getRecursiveShouldGiveTheSameResultAsGet() {
-        LinkedListDeque<Integer> int_deque = new LinkedListDeque<>();
+        LinkedListDeque<Integer> intDeque = new LinkedListDeque<>();
         for (int i = 0; i < 10; i++) {
-            int_deque.addLast(i);
+            intDeque.addLast(i);
         }
-        assertEquals((int) int_deque.get(4), (int) int_deque.getRecursive(4));
+        assertEquals((int) intDeque.get(4), (int) intDeque.getRecursive(4));
     }
 
     @Test
@@ -107,14 +107,14 @@ public class LinkedListDequeTest {
     @Test
     /* Test the iterator */
     public void checkIfIteratorIsWorkingProperly() {
-        LinkedListDeque<Integer> int_deque = new LinkedListDeque<>();
+        LinkedListDeque<Integer> intDeque = new LinkedListDeque<>();
         for (int i = 0; i < 10; i++) {
-            int_deque.addLast(i);
+            intDeque.addLast(i);
         }
-        for (int i: int_deque)
+        for (int i: intDeque)
             System.out.print(i + " ");
         System.out.println();
-        Iterator<Integer> iter = int_deque.iterator();
+        Iterator<Integer> iter = intDeque.iterator();
         iter.next();
         iter.next();
         assertEquals(2, (int) iter.next());
