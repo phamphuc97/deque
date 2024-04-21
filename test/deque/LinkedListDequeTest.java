@@ -130,4 +130,13 @@ public class LinkedListDequeTest {
         assertTrue(stringDeque.contains("Hello"));
         assertFalse(stringDeque.contains("my beautiful"));
     }
+
+    @Test
+    public void usingPrintlnWillPrintOutTheListSimilarToPythonListFormat() {
+        Deque<String> stringDeque = new LinkedListDeque<>();
+        stringDeque.addFirst("I");
+        stringDeque.addLast("love");
+        stringDeque.addLast("Python");
+        System.out.println(stringDeque);
+    }
 }

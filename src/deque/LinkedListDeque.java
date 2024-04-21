@@ -171,20 +171,20 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
         }
     }
 
-    /**
+
      @Override
      // Convert the list to string
      public String toString() {
-     StringBuilder newString = new StringBuilder("[");
-     for (int i = 0; i < size - 1; i++) {
-     newString.append(get(i));
-     newString.append(", ");
+         StringBuilder newString = new StringBuilder("[");
+         for (int i = 0; i < size - 1; i++) {
+             newString.append(get(i));
+             newString.append(", ");
+         }
+         newString.append(get(size - 1));
+         newString.append("]");
+         return newString.toString();
      }
-     newString.append(get(size - 1));
-     newString.append("]");
-     return newString.toString();
-     }
-     */
+
 
     /**
      @Override
