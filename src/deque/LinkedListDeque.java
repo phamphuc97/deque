@@ -114,19 +114,19 @@ public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
         return getRecursive(index, currentIndex + 1, current.next);
     }
 
-    /**
+    @Override
      // Check if the item exists in the list
-     private boolean contains(T item) {
-     for (int i = 0; i < size; i++) {
-     if (get(i) == item) {
-     return true;
-     }
-     }
-     return false;
-     }
-     */
+    public boolean contains(T item) {
+        for (int i = 0; i < size; i++) {
+            if (get(i) == item) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    /** Returns whether or not the parameter o is equal to the Deque */
+
+    /** Returns whether the parameter o is equal to the Deque */
     public boolean equals(Object other) {
         if (this == other) {
             return true;

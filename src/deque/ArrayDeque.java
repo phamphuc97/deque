@@ -150,19 +150,20 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
         nextLast = size;
     }
 
-    /**
-     // Check if the item exists in the list
-     private boolean contains(T item) {
-     for (int i = 0; i < size; i++) {
-     if (get(i) == item) {
-     return true;
-     }
-     }
-     return false;
-     }
-     */
 
-    /** Returns whether or not the parameter o is equal to the Deque */
+    @Override
+    // Check if the item exists in the list
+    public boolean contains(T item) {
+        for (int i = 0; i < size; i++) {
+            if (get(i) == item) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    /** Returns whether the parameter o is equal to the Deque */
     public boolean equals(Object o) {
         if (this == o) {
             return true;
