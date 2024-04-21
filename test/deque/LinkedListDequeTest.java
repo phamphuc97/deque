@@ -16,7 +16,7 @@ public class LinkedListDequeTest {
      *
      * && is the "and" operation. */
     public void aDequeWith3ItemsShouldHaveSize3() {
-        LinkedListDeque<String> stringDeque = new LinkedListDeque<String>();
+        Deque<String> stringDeque = new LinkedListDeque<String>();
 
         assertTrue("A newly initialized LLDeque should be empty", stringDeque.isEmpty());
         stringDeque.addFirst("front");
@@ -36,7 +36,7 @@ public class LinkedListDequeTest {
     @Test
     /** Adds an item, then removes an item, and ensures that dll is empty afterwards. */
     public void aDequeShouldBeEmptyAfterAddingAndRemovingAnItem() {
-        LinkedListDeque<Integer> intDeque = new LinkedListDeque<Integer>();
+        Deque<Integer> intDeque = new LinkedListDeque<Integer>();
         // should be empty
         assertTrue("intDeque should be empty upon initialization", intDeque.isEmpty());
 
@@ -75,8 +75,8 @@ public class LinkedListDequeTest {
     @Test
     /* Test the equals method */
     public void twoDequesWithIdenticalElementsShouldEqual() {
-        LinkedListDeque<Integer> dequeOne = new LinkedListDeque<>();
-        LinkedListDeque<Integer> dequeTwo = new LinkedListDeque<>();
+        Deque<Integer> dequeOne = new LinkedListDeque<>();
+        Deque<Integer> dequeTwo = new LinkedListDeque<>();
         for (int i = 0; i < 10; i++) {
             dequeOne.addLast(i);
         }
@@ -91,8 +91,8 @@ public class LinkedListDequeTest {
     @Test
     /* Test the equals method */
     public void twoDequesWithDifferentElementsShouldNotEqual() {
-        LinkedListDeque<Integer> dequeOne = new LinkedListDeque<>();
-        LinkedListDeque<Integer> dequeTwo = new LinkedListDeque<>();
+        Deque<Integer> dequeOne = new LinkedListDeque<>();
+        Deque<Integer> dequeTwo = new LinkedListDeque<>();
         for (int i = 0; i < 10; i++) {
             dequeOne.addLast(i);
         }
@@ -124,7 +124,7 @@ public class LinkedListDequeTest {
     @Test
     /* Test the contains() method */
     public void testContainsMethod() {
-        LinkedListDeque<String> stringDeque = new LinkedListDeque<>();
+        Deque<String> stringDeque = new LinkedListDeque<>();
         stringDeque.addFirst("Hello");
         stringDeque.addLast("World!");
         assertTrue(stringDeque.contains("Hello"));

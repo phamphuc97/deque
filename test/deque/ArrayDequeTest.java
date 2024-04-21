@@ -28,7 +28,7 @@ public class ArrayDequeTest {
 
     @Test
     /** Test the get operation */
-    public void testingGetMethod() {
+    public void getMethodShouldThrowAnExceptionIfAnItemDoesNotExistInTheArrayDeque() {
         ArrayDeque<Integer> intArrayDeque = new ArrayDeque<>();
         intArrayDeque.addFirst(4);
         intArrayDeque.addLast(5);
@@ -46,7 +46,7 @@ public class ArrayDequeTest {
 
     @Test
     /* Test the iterator */
-    public void testIterator() {
+    public void testingIterator() {
         ArrayDeque<Integer> ad = new ArrayDeque<>();
         for (int i = 0; i < 4; i++)
             ad.addFirst(i);
@@ -60,5 +60,15 @@ public class ArrayDequeTest {
         iter.next();
         assertEquals(1, (int) iter.next());
         assertEquals(0, (int) iter.next());
+    }
+
+    @Test
+    /* Test the contains() method */
+    public void containsShouldReturnABooleanValue() {
+        Deque<String> stringDeque = new ArrayDeque<>();
+        stringDeque.addFirst("Go");
+        stringDeque.addLast("Bears!");
+        assertTrue(stringDeque.contains("Bears!"));
+        assertFalse(stringDeque.contains("bears!"));
     }
 }
