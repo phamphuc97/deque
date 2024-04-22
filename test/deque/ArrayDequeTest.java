@@ -24,4 +24,14 @@ public class ArrayDequeTest {
         assertEquals(1, (int) iter.next());
         assertEquals(0, (int) iter.next());
     }
+
+    @Test
+    /* Test the contains() method */
+    public void containsShouldReturnABooleanValue() {
+        Deque<String> stringDeque = new ArrayDeque<>();
+        stringDeque.addFirst("Go");
+        stringDeque.addLast("Bears!");
+        assertTrue(stringDeque.contains("Bears!"));
+        assertFalse(stringDeque.contains("bears!"));
+    }
 }
