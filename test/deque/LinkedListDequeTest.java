@@ -130,4 +130,14 @@ public class LinkedListDequeTest {
         assertTrue(stringDeque.contains("Hello"));
         assertFalse(stringDeque.contains("my beautiful"));
     }
+
+    @Test
+    public void usingPrintlnWillPrintOutEveryItemInTheList() {
+        Deque<String> stringDeque = new LinkedListDeque<>();
+        stringDeque.addFirst("I");
+        stringDeque.addLast("love");
+        stringDeque.addLast("Python");
+        assertEquals("I, love, Python", stringDeque.toString());
+        System.out.println(stringDeque);
+    }
 }
