@@ -71,4 +71,20 @@ public class LinkedListDequeTest {
         }
         assertEquals((int) intDeque.get(4), (int) intDeque.getRecursive(4));
     }
+
+    @Test
+    /* Test the equals method */
+    public void twoDequesWithIdenticalElementsShouldEqual() {
+        Deque<Integer> dequeOne = new LinkedListDeque<>();
+        Deque<Integer> dequeTwo = new LinkedListDeque<>();
+        for (int i = 0; i < 10; i++) {
+            dequeOne.addLast(i);
+        }
+        for (int i = 0; i < 10; i++) {
+            dequeTwo.addLast(i);
+        }
+
+        boolean dequeOneEqualsDequeTwo = dequeOne.equals(dequeTwo);
+        assertEquals(true, dequeOneEqualsDequeTwo);
+    }
 }
