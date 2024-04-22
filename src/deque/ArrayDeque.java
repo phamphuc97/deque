@@ -63,22 +63,6 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     }
 
     @Override
-    /** Print the items in the deque from nextFirst to nextLast */
-    public void printDeque() {
-        int current = nextFirst + 1;
-        while (current < items.length && items[current] != null) {
-            System.out.print(items[current] + " ");
-            current++;
-        }
-        current = 0;
-        while (items[current] != null && current != (nextFirst + 1)) {
-            System.out.print(items[current] + " ");
-            current++;
-        }
-        System.out.println();
-    }
-
-    @Override
     /** Removes and returns the item at the front of the deque */
     public T removeFirst() {
         if (size == 0) {
@@ -208,31 +192,16 @@ public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
         }
     }
 
-    /**
-     @Override
-     // Convert the list to string
-     public String toString() {
-     StringBuilder newString = new StringBuilder("[");
-     for (int i = 0; i < size - 1; i++) {
-     newString.append(get(i));
-     newString.append(", ");
-     }
-     newString.append(get(size - 1));
-     newString.append("]");
-     return newString.toString();
-     }
-     */
 
-    /**
      @Override
-     // Compare the size of two lists
-     public int compareTo(Object o) {
-     ArrayDeque other = (ArrayDeque) o;
-     if (this.size < other.size())
-     return -1;
-     else if (this.size == other.size())
-     return 0;
-     return 1;
+     // Convert the list to string, each separated by a comma
+     public String toString() {
+         StringBuilder newString = new StringBuilder();
+         for (int i = 0; i < size - 1; i++) {
+             newString.append(get(i));
+             newString.append(", ");
+         }
+         newString.append(get(size - 1));
+         return newString.toString();
      }
-     */
 }

@@ -8,7 +8,7 @@ public interface Deque<T> {
     }
     int size();
     boolean contains(T item);
-    void printDeque();
+
     T removeFirst();
     T removeLast();
     T get(int index);

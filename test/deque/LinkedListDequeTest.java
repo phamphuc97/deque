@@ -132,11 +132,12 @@ public class LinkedListDequeTest {
     }
 
     @Test
-    public void usingPrintlnWillPrintOutTheListSimilarToPythonListFormat() {
+    public void usingPrintlnWillPrintOutEveryItemInTheList() {
         Deque<String> stringDeque = new LinkedListDeque<>();
         stringDeque.addFirst("I");
         stringDeque.addLast("love");
         stringDeque.addLast("Python");
+        assertEquals("I, love, Python", stringDeque.toString());
         System.out.println(stringDeque);
     }
 }
