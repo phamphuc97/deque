@@ -34,4 +34,14 @@ public class ArrayDequeTest {
         assertTrue(stringDeque.contains("Bears!"));
         assertFalse(stringDeque.contains("bears!"));
     }
+
+    @Test
+    public void usingPrintlnWillPrintOutEveryItemInTheList() {
+        Deque<Integer> numberDeque = new ArrayDeque<>();
+        numberDeque.addFirst(45);
+        numberDeque.addFirst(97);
+        numberDeque.addLast(26);
+        assertEquals("97, 45, 26", numberDeque.toString());
+        System.out.println(numberDeque);
+    }
 }
