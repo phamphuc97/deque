@@ -87,4 +87,20 @@ public class LinkedListDequeTest {
         boolean dequeOneEqualsDequeTwo = dequeOne.equals(dequeTwo);
         assertEquals(true, dequeOneEqualsDequeTwo);
     }
+
+    @Test
+    /* Test the equals method */
+    public void twoDequesWithDifferentElementsShouldNotEqual() {
+        Deque<Integer> dequeOne = new LinkedListDeque<>();
+        Deque<Integer> dequeTwo = new LinkedListDeque<>();
+        for (int i = 0; i < 10; i++) {
+            dequeOne.addLast(i);
+        }
+        for (int i = 9; i >= 0; i--) {
+            dequeTwo.addLast(i);
+        }
+
+        boolean dequeOneNotEqualDequeTwo = dequeOne.equals(dequeTwo);
+        assertEquals(false, dequeOneNotEqualDequeTwo);
+    }
 }
