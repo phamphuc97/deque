@@ -103,4 +103,21 @@ public class LinkedListDequeTest {
         boolean dequeOneNotEqualDequeTwo = dequeOne.equals(dequeTwo);
         assertEquals(false, dequeOneNotEqualDequeTwo);
     }
+
+    @Test
+    /* Test the iterator */
+    public void checkIfIteratorIsWorkingProperly() {
+        LinkedListDeque<Integer> intDeque = new LinkedListDeque<>();
+        for (int i = 0; i < 10; i++) {
+            intDeque.addLast(i);
+        }
+        for (int i: intDeque)
+            System.out.print(i + " ");
+        System.out.println();
+        Iterator<Integer> iter = intDeque.iterator();
+        iter.next();
+        iter.next();
+        assertEquals(2, (int) iter.next());
+        assertEquals(3, (int) iter.next());
+    }
 }
