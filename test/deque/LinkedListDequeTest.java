@@ -61,4 +61,14 @@ public class LinkedListDequeTest {
             intDeque.removeLast();
         });
     }
+
+    @Test
+    /* Test the getRecursive method */
+    public void getRecursiveShouldGiveTheSameResultAsGet() {
+        LinkedListDeque<Integer> intDeque = new LinkedListDeque<>();
+        for (int i = 0; i < 10; i++) {
+            intDeque.addLast(i);
+        }
+        assertEquals((int) intDeque.get(4), (int) intDeque.getRecursive(4));
+    }
 }
