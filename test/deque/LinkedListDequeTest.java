@@ -120,4 +120,14 @@ public class LinkedListDequeTest {
         assertEquals(2, (int) iter.next());
         assertEquals(3, (int) iter.next());
     }
+
+    @Test
+    /* Test the contains() method */
+    public void helloWorldDoesNotHaveMyBeautiful() {
+        Deque<String> stringDeque = new LinkedListDeque<>();
+        stringDeque.addFirst("Hello");
+        stringDeque.addLast("World!");
+        assertTrue(stringDeque.contains("Hello"));
+        assertFalse(stringDeque.contains("my beautiful"));
+    }
 }
