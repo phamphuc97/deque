@@ -48,4 +48,17 @@ public class LinkedListDequeTest {
         // should be empty
         assertTrue("intDeque should be empty after removal", intDeque.isEmpty());
     }
+
+    @Test
+    /* check if null is return when removing from an empty LinkedListDeque. */
+    public void removingEmptyDequeResultsARuntimeException() {
+        LinkedListDeque<Integer> intDeque = new LinkedListDeque<Integer>();
+
+        assertThrows(RuntimeException.class, () -> {
+            intDeque.removeFirst();
+        });
+        assertThrows(RuntimeException.class, () -> {
+            intDeque.removeLast();
+        });
+    }
 }
