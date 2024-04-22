@@ -1,5 +1,7 @@
 package deque;
 
+// A linked list deque provides efficient insertion and deletion operations at both ends of the list,
+// allowing constant time complexity for these operations.
 public class LinkedListDeque<T> implements Deque<T>, Iterable<T> {
     private class Node {
         private T item;

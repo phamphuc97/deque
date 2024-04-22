@@ -1,5 +1,7 @@
 package deque;
 
+// An array deque offers constant-time insertion and deletion operations at both ends of the array,
+// providing dynamic resizing to accommodate varying numbers of elements efficiently.
 public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     private T[] items;
     private int size;
